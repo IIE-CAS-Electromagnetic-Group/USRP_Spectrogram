@@ -8,7 +8,7 @@ from scipy.signal import get_window
 
 from utils.dataset_preprocessing import df_normalization_nonlinear
 from utils.plot_greyscale import plot_greyscale_for_singledf
-from utils.visual_spectrum_single_file import plot_trace_heatmap
+
 
 # ===== 参数配置 =====
 fs = 20_000_000    # 采样率
@@ -123,7 +123,7 @@ while global_frame_idx * hop < N:
             df = pd.read_csv(cur_csv_path)
             df = df_normalization_nonlinear(df)
             plot_greyscale_for_singledf(df, image_name=os.path.join(output_dir, f"img/{os.path.basename(cur_csv_path)[:-4]}.png"))
-            plot_trace_heatmap(cur_csv_path, cur_csv_path.replace(".csv", ".html"))
+
             # 新文件
             file_index += 1
             rows_in_current_file = 0

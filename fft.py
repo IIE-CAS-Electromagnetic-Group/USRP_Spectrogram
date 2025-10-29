@@ -9,7 +9,7 @@ import os
 
 from utils.dataset_preprocessing import df_normalization_nonlinear, df_normalization
 from utils.plot_greyscale import plot_greyscale_for_singledf, plot_trace_heatmap_return_fig
-from utils.visual_spectrum_single_file import plot_trace_heatmap
+
 
 
 
@@ -66,5 +66,5 @@ for i in range(num_files):
     df=pd.read_csv(os.path.join(output_dir, f"csv/{iqfilename}_spectrogram_{i}.csv"))
     df=df_normalization_nonlinear(df)
     plot_greyscale_for_singledf(df,image_name=os.path.join(output_dir, f"img/{iqfilename}_spectrogram_{i}.png"))
-    plot_trace_heatmap(os.path.join(output_dir, f"csv/{iqfilename}_spectrogram_{i}.csv"), os.path.join(output_dir, f"csv/{iqfilename}_spectrogram_{i}.html"))
+
 print(f"保存完毕，共生成 {num_files} 个文件。")
